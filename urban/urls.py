@@ -48,6 +48,9 @@ urlpatterns = [
     path("accounts/login/", LoginView.as_view(template_name="login.html"), name="login"),
     path('perfil/', perfil, name='perfil'),
     path('perfil/editar/', editar_perfil, name='editar_perfil'),
+    path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
+    
+    path('cambiar_contraseña/', auth_views.PasswordChangeView.as_view(), name='cambiar_contraseña'),
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

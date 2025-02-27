@@ -1,0 +1,80 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Gris claro */
+    color: #333; /* Gris oscuro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.profile-container {
+    background-color: #ffffff; /* Blanco */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+/* Título */
+.perfil {
+    color: #003366; /* Azul oscuro */
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input {
+    background-color: #f9f9f9; /* Fondo gris claro */
+}
+
+/* Botones */
+button {
+    background-color: #003366; /* Azul oscuro */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #002244; /* Azul más oscuro */
+}
+
+/* Enlaces */
+a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+a:first-of-type {
+    color: #333; /* Gris oscuro */
+}
+
+a:last-of-type {
+    color: #dc3545; /* Rojo */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+

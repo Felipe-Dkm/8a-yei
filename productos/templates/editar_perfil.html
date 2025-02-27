@@ -2,15 +2,27 @@
 {% load static %}
 
 {% block content %}
-<main class="main_1">
-    <div class="profile-container">
-        <h2 class="perfil">Editar Perfil</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Guardar Cambios</button>
-        </form>
-        <a href="{% url 'perfil' %}">Cancelar</a>
-    </div>
-</main>
+<link rel="stylesheet" href="{% static 'css/restablecer.css' %}">
+
+<div class="container">
+    <h2>Restablecer contraseña</h2>
+    <p>Introduce tu correo electrónico registrado y te enviaremos un enlace para restablecer tu contraseña.</p>
+
+    <!-- Bloque para mostrar mensajes -->
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <form action="{% url 'cambiar_contraseña' %}" method="POST">
+
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <br>
+        <button type="submit">Enviar enlace</button>
+    </form>
+</div>
 {% endblock %}

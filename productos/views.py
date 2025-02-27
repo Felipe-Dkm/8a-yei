@@ -10,6 +10,10 @@ from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth import logout
 from .models import Producto
 from django.shortcuts import redirect
+
+from django.contrib.auth.views import PasswordChangeView
+from django.urls import reverse_lazy
+
 # Create your views here.
 def index(request):
     if request.user.is_authenticated:
@@ -32,6 +36,10 @@ def editar_perfil(request):
         form = UserChangeForm(instance=request.user)
     
     return render(request, 'editar_perfil.html', {'form': form})
+
+class CambiarContraseñaView(PasswordChangeView):
+    template_name = 'cambiar_contraseña.html'
+    success_url = reverse_lazy('login')  # Redirige al login después del cambio de contraseña
 
 
 
